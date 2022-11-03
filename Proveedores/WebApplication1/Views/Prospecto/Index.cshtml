@@ -1,0 +1,51 @@
+﻿@model List<Proveedores.WEB.Models.Prospecto>
+<div>
+    <div class="row">
+        <div class="col-8"> <h4>Catalogo de Prospectos</h4> </div>
+        <div class="col-4 text-right">
+            <a class="btn btn-primary" asp-controller="ProspectoController" asp-action="Nuevo"> Nuevo</a> 
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Calle</th>
+                        <th>Colonia</th>
+                        <th>NumeroExterior</th>
+                        <th>CodigoPostal</th>
+                        <th>Telefono</th>
+                        <th>RFC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdProspecto</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Calle</td>
+                            <td>@item.Colonia</td>
+                            <td>@item.NumeroExterior</td>
+                            <td>@item.CodigoPostal</td>
+                            <td>@item.Telefono</td>
+                            <td>@item.RFC</td>
+                            <td class=" text-right">
+                                <button class="btn btn-warning">Modificar</button>
+                                <button class="btn btn-danger">Borrar</button>
+                            </td>
+
+                        </tr>
+
+                    }
+                   
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
